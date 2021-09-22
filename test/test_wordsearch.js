@@ -35,4 +35,36 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+  
+  it("Vertical search should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['S', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['E', 'O', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['I', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['N', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['F', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['E', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['L', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['D', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'SEINFELD');
+    
+    assert.isTrue(result);
+  });
+
+  it("Reverse search should return true if the reverse word is present", function() {
+    const result = wordSearch([
+    ['D', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+    ['L', 'O', 'I', 'N', 'F', 'E', 'L', 'D'],
+    ['E', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+    ['F', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+    ['N', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+    ['I', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+    ['E', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+    ['S', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+    ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+  ], 'SEINFELD');
+  
+  assert.isTrue(result);
+});
 });
